@@ -178,7 +178,7 @@
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\linewidth]{Estudante.png}
+  \includegraphics[width=\linewidth]{btc.jpg}
   \caption{Estudantes em sala de aula, realizando provas. (\url{https://medium.com/@JaskySingh/what-if-we-had-exams-everyday-well-everyone-would-be-better-off-f97919edeac}).}
   \Description{Estudantes em dia de prova.}
 \end{figure}
@@ -186,21 +186,20 @@
 
 
 \section{Introduction}
-A base a ser utilizada será a "Students Performance in Exams" que pode ser encontrada em \url{https://www.kaggle.com/spscientist/students-performance-in-exams}. A base é composta por 8 atributos, sendo eles nominais, binários e numéricos:
+A base a ser utilizada será a "Bitcoin Historical Data" que pode ser encontrada em \url{https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data}.
+A base é composta por 8 atributos, sendo eles nominais, binários e numéricos:
 \begin{itemize}
-    \item Gender - Define o gênero da pessoa 
-    \item Race/Ethnicity - Define a raça/etinia de uma pessoa em grupos separados entre A-D
-    \item Parental level of education - Define o nível de educação dos pais da pessoa estudada
-    \item Lunch - Define um padrão para a alimentação da pessoa estudada
-    \item Test preparation course - Define se a pessoa estudada completou o curso de preparação
-    \item Math score - Nota na matéria matemática
-    \item Reading score - Nota em leitura
-    \item Writing score - Nota em escrita
+    \item Timestamp - A data da instância (UNIX Timestamp) 
+    \item Open - Preço da abertura do Bitcoin no início do pregão
+    \item High - Teto do preço do Bitcoin do pregão
+    \item Low - Piso do preço do Bitcoin do pregão
+    \item Close - Preço do fechamento do Bitcoin no término do pregão
+    \item Volume\_(BTC) - Volume de Bitcoins transacionado no pregão
+    \item Volume\_(Currency) - Volume de outras moedas transacionado no pregão\footnote{Moedas convertidas para BTC, como Real para BTC}
+    \item Weighted\_Price - \textit{VWAP- Volume Weighted Average Price}
 \end{itemize}
 
-A base possui 1000 instâncias e não é um problema de classificação.
-
-A base "Students Performance in Exams" retrata o impacto de certas características(Genêro, Raça, Nível de educação dos pais, Almoço e Realização do curso preparatório) que estão atreladas a cada aluno estudado em relação à sua performance em 3 matérias
+A base "Bitcoin Historical Data" possui 4857378 instâncias e é um problema de predição e apresenta o histórico de preço da moeda, desde 2012 a janeiro de 2021.
 
 %% Forma de  \cite{Ablamowicz07}
 
