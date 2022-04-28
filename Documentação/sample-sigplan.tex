@@ -233,6 +233,33 @@ O segundo Modelo trouxe uma estratégia um pouco diferente, sua predição é ba
 Em uma terceira análise, são comparados Multi-Layer Perceptron (MLP) e Non-linear auto-regressive exogenous (NARX), sendo concluído que o MLP pode ser utilizado para predição, entretanto sem superar o NARX.
 O autor também ressalta o impacto da normalização dos dados utilizando 5 técnicas, sendo elas Log Normalization, In built MATLAB method, Standard deviation normalization, Z score normalization, Boxcox normalization.
 Embora os resultados sejam individuais, todas as técnicas levaram a uma melhora significativa à acurácia.   
+
+\section{Metodologia}
+\subsection{ARIMA}
+ARIMA são métodos de predição idealizados por G. E. P. Box e G. M. Jenkins nos anos 1970.
+Essa técnica geralmente tem como etapas, as seguintes:
+\begin{enumerate}
+  \item Seleção e identificação do modelo
+  \item Estimativa de parâmetros de auto regressão (AR), integração ou diferenciação (I) e média móvel (MA)
+  \item Verificação do modelo
+\end{enumerate}
+\subsection{Pré-processamento}
+No pré-processamento da base, inicialmente foram feitos alguns passos antes da seleção do modelo e de outras ações.
+No processo da obtenção dos dados, foram gravados a data e a hora em formato UNIX, que para melhor manuseio da mesma, foi prontamente convertida para o formato padrão UTC.
+Além disso, foi feito o resample baseado em certas frequências de tempo, sendo as mesmas, diária, mensal, trimestral e anual.
+
+Após esse tratamento inicial, foi-se então analisado as tendências da criptomoeda nas frequências de tempo descritas acima, as quais podem ser observadas aqui:
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{ibagens/Estudante.png}
+  \caption{frequência do bitcoin nos períodos (da esquerda para a direita) diária, mensal, trimestral e anual .}
+  \Description{phisical bitcoin.}
+\end{figure}
+
+
+
+
+
 %-----------------------------------------------------------
 % COLOCAR ESSA PARTE SOMENTE SE JULGAR NECESSÁRIO
 
