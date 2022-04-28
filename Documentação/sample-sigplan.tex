@@ -302,6 +302,18 @@ Com isso, utilizamos a diferença sazonal de Y no período de t, que é $YT -YT-
 Onde, se a diferença sazonal de Y for idêntica e sem autocorrelação, com isso o Y é descrito por um modelo de distribuído aleatoriamente.
 Para utilizá-lo pensamos em uma forma mais eficaz para ajustar o Índice e subtraí-lo por cada Regular Differentiation que foi observado na mesmo estacão, gerando assim características mais brutas da sazonalidade de uma série em questão.
 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{ibagens/output.png}
+  \caption{Predição do preço bitcoin}
+  \Description{phisical bitcoin.}
+\end{figure}
+
+\subsection{Gráfico Predição do preço bitcion}
+
+No gráfico em questão temos representado pela linha vermelha a predicao do bitcion (no qual foi utilizado o algoritimo de regressao Arima), e a linha azul representando o preço real do mesmo ao passar do tempo. No inicio percebemos que as duas linhas estao uniformemente juntas mas em um certo momento elas se distancião causando assim um erro. Com isso nosso proximo foco sera ajustar nossos pre-processamentos para chegarmos em um grau de erro menor.
+
 %-----------------------------------------------------------
 % COLOCAR ESSA PARTE SOMENTE SE JULGAR NECESSÁRIO
 
