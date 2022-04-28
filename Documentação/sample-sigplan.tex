@@ -279,9 +279,11 @@ Após esse tratamento inicial, foi-se então analisado as tendências da criptom
 \end{figure}
 
 \subsection{Stationary check}
-No stationary check que esta totalmente interligada a plotagem dos dados e de sua verificação de tedencia e componentes, com esses dados iremos determinar uma série temporal em que foi gerada por um processo Stationary, Observando apenas seu plot nos dados
+No stationary check, que está totalmente interligada a plotagem dos dados, verificação de tendencia e componentes, com esses dados iremos determinar uma série temporal em que foi gerada por um processo Stationary.
+Observando apenas seu plot nos dados.
 \subsection{STL Decomposition}
-No Stl Decomposition, o utilizamos para decompor uma série temporal em dois componentes de tendência relacionados a predição da média por mês de nossos dados. Utilizamos a Seasonal  pela sua duração da tendência ser mais suave e nos dar em torno de 150 da temporariedade, e utilizamos o modelo da Regular para termos também uma duração mais sazonal 
+Sobre o Stl Decomposition, o utilizamos para decompor uma série temporal em dois componentes de tendência relacionados a predição da média por mês de nossos dados.
+Utilizamos a Seasonal pela sua duração da tendência ser mais suave e nos dar em torno de 150 da temporariedade, e utilizamos o modelo da Regular para termos também uma duração mais sazonal.
 \begin{figure}[h]
   \centering
   \includegraphics[width=\linewidth]{ibagens/unknown.png}
@@ -290,11 +292,15 @@ No Stl Decomposition, o utilizamos para decompor uma série temporal em dois com
 \end{figure}
 
 \subsection{Seasonal differentiation}
-Seasonal differentiation , foi utilizamos, pois, tenhamos dados mensais nais quais ha 12 períodos de uma estacão em si, com isso utilizamos a diferença sazonal de Y no período de t é YT -YT-12. Onde a diferença sazonal de Y for idêntica e sem autocorrelação, com isso o Y é descrito por um modelo de distribuído aleatoriamente.
+A Seasonal differentiation foi utilizado, pois, supondo que temos dados mensais, nas quais ha 12 períodos de uma estacão em si.
+Desta forma, utilizamos a diferença sazonal de Y no período de t, que é $YT -YT-12$.
+Insto onde a diferença sazonal de Y é idêntica e sem autocorrelação, com isso o Y é descrito por um modelo distribuído aleatoriamente.
 
 \subsection{Regular differentiation}
-Seasonal differentiation , foi utilizamos, pois, tenhamos dados mensais nais quais ha 12 períodos de uma estacão , com isso utilizamos a diferença sazonal de Y no período de t é YT -YT-12. Onde a diferença sazonal de Y for idêntica e sem autocorrelação, com isso o Y é descrito por um modelo de distribuído aleatoriamente.
-Para utilizá-lo pensamos em uma forma mais eficaz para ajustar o Índice e subtraí-lo por cada Season diferencign que foi observado na mesmo estacão, gerando assim características mais brutas da sazonalidade de uma série em questão.
+Regular Differentiation, foi utilizado, pois, supondo que temos dados mensais, nais quais ha 12 períodos de uma estacão.
+Com isso, utilizamos a diferença sazonal de Y no período de t, que é $YT -YT-12$.
+Onde, se a diferença sazonal de Y for idêntica e sem autocorrelação, com isso o Y é descrito por um modelo de distribuído aleatoriamente.
+Para utilizá-lo pensamos em uma forma mais eficaz para ajustar o Índice e subtraí-lo por cada Regular Differentiation que foi observado na mesmo estacão, gerando assim características mais brutas da sazonalidade de uma série em questão.
 
 %-----------------------------------------------------------
 % COLOCAR ESSA PARTE SOMENTE SE JULGAR NECESSÁRIO
