@@ -233,8 +233,6 @@ O segundo Modelo trouxe uma estratégia um pouco diferente, sua predição é ba
 Em uma terceira análise, são comparados Multi-Layer Perceptron (MLP) e Non-linear auto-regressive exogenous (NARX), sendo concluído que o MLP pode ser utilizado para predição, entretanto sem superar o NARX.
 O autor também ressalta o impacto da normalização dos dados utilizando 5 técnicas, sendo elas Log Normalization, In built MATLAB method, Standard deviation normalization, Z score normalization, Boxcox normalization.
 Embora os resultados sejam individuais, todas as técnicas levaram a uma melhora significativa à acurácia.   
-
-\section{Metodologia}
 \subsection{ARIMA}
 ARIMA são métodos de predição idealizados por G. E. P. Box e G. M. Jenkins nos anos 1970.
 Essa técnica geralmente tem como etapas, as seguintes:
@@ -243,6 +241,30 @@ Essa técnica geralmente tem como etapas, as seguintes:
   \item Estimativa de parâmetros de auto regressão (AR), integração ou diferenciação (I) e média móvel (MA)
   \item Verificação do modelo
 \end{enumerate}
+O funcionamento do modelo se baseia na regressão de uma varável sob valores passados, sendo assim possível a captura de relações complexas, considerando erros e a observação de "lagged terms". Sendo assim o modelo utiliza de valores antigos gerados na série temporal
+para prever os novos resultados, essa aplicação dos valores passados é realizada por meio da alocação de pesos para tais valores, que são relativos a quanto tempo foram gerados em relação ao novo valor a ser calculado.
+
+
+
+Quanto as etapas, nesse projeto primeiramente executamos um algoritmo,com a passagem de alguns pré-parâmetros
+,para avaliar o modelo como demonstrado abaixo:
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{ibagens/ARIMAcompleStatistics.png}
+  \caption{Trecho de log de resultado da análise para identificação do modelo .}
+  \Description{Code Log.}
+\end{figure}
+
+Após a análise gerada pelo algorítimo, foi possível determinar os hiperparâmetros (p,d,q) OU ((AR),(I),(MA)) a serem utilizados no ARIMA, a fim de obter os melhores resultados possíveis, sendo definidos como (1,1,0).
+
+Após os ajustes de hiperparâmetros, foi possível realizar as predições com o modelo ARIMA.
+
+
+
+
+\section{Metodologia}
 \subsection{Pré-processamento}
 No pré-processamento da base, inicialmente foram feitos alguns passos antes da seleção do modelo e de outras ações.
 No processo da obtenção dos dados, foram gravados a data e a hora em formato UNIX, que para melhor manuseio da mesma, foi prontamente convertida para o formato padrão UTC.
@@ -256,9 +278,23 @@ Após esse tratamento inicial, foi-se então analisado as tendências da criptom
   \Description{phisical bitcoin.}
 \end{figure}
 
+\subsection{Stationary check}
+No stationary check que esta totalmente interligada a plotagem dos dados e de sua verificação de tedencia e componentes, com esses dados iremos determinar uma série temporal em que foi gerada por um processo Stationary, Observando apenas seu plot nos dados
+\subsection{STL Decomposition}
+No Stl Decomposition, o utilizamos para decompor uma série temporal em dois componentes de tendência relacionados a predição da média por mês de nossos dados. Utilizamos a Seasonal  pela sua duração da tendência ser mais suave e nos dar em torno de 150 da temporariedade, e utilizamos o modelo da Regular para termos também uma duração mais sazonal 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{ibagens/unknown.png}
+  \caption{Stationary and Stl Decomposition}
+  \Description{phisical bitcoin.}
+\end{figure}
 
+\subsection{Seasonal differentiation}
+Seasonal differentiation , foi utilizamos, pois, tenhamos dados mensais nais quais ha 12 períodos de uma estacão em si, com isso utilizamos a diferença sazonal de Y no período de t é YT -YT-12. Onde a diferença sazonal de Y for idêntica e sem autocorrelação, com isso o Y é descrito por um modelo de distribuído aleatoriamente.
 
-
+\subsection{Regular differentiation}
+Seasonal differentiation , foi utilizamos, pois, tenhamos dados mensais nais quais ha 12 períodos de uma estacão , com isso utilizamos a diferença sazonal de Y no período de t é YT -YT-12. Onde a diferença sazonal de Y for idêntica e sem autocorrelação, com isso o Y é descrito por um modelo de distribuído aleatoriamente.
+Para utilizá-lo pensamos em uma forma mais eficaz para ajustar o Índice e subtraí-lo por cada Season diferencign que foi observado na mesmo estacão, gerando assim características mais brutas da sazonalidade de uma série em questão.
 
 %-----------------------------------------------------------
 % COLOCAR ESSA PARTE SOMENTE SE JULGAR NECESSÁRIO
